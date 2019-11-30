@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="opis mojej własnej strony" >
+    <title>FC Barcelona</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Sintony:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script type="text/javascript" src="timer.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript"> 
+
+        //BigDay = new Date("January 1, 2001");
+        BigDay = new Date(2019,3,19);
+        msPerDay = 24 * 60 * 60 * 1000 ;
+        var id,pause=0,  position=0;
+        
+        function showtime() {
+        today = new Date();
+        timeLeft = (BigDay.getTime() - today.getTime());
+        e_daysLeft = timeLeft / msPerDay;
+        daysLeft = Math.floor(e_daysLeft);
+        tdays = Math.floor(e_daysLeft);
+        e_hrsLeft = (e_daysLeft - daysLeft)*24;
+        hrsLeft = Math.floor(e_hrsLeft);
+        minsLeft = Math.floor((e_hrsLeft - hrsLeft)*60);
+        }
+        
+        function Liczebnik( ile, rdzen, konc1, konc2, konc5 ) { 
+        var N0, N1, N2, R0;
+          N0 = Math.floor( Math.abs( ile ) ); 
+          N1 = N0 % 10;
+          N2 = N0 % 100;
+          R0 = konc1;
+          if (N0 == 1)   R0 = konc1
+            else if ((N2 > 4) && (N2 < 22))   R0 = konc5
+                else if ((N1 > 1) && (N1 <= 4))   R0 = konc2
+                    else R0 = konc5;
+          return rdzen + R0;
+        }
+        
+        function imascroller() {
+          var i, k;
+          showtime();
+        
+          var msg= "   "+Liczebnik( daysLeft, "Został"," ","y ","o " )  +
+            daysLeft+Liczebnik( daysLeft, " ","dzien, ","dni, ","dni, " ) +
+            hrsLeft +Liczebnik( hrsLeft," godzin", "a","y","" ) +" i "+
+            minsLeft+Liczebnik( minsLeft," minut",  "a ","y ","  " )+" do meczu Ligi Mistrzów ( FC Barcelona - Manchester United)!!"+
+            "                             ";
+
+          k=(150/msg.length)+1;
+          for(i=0;i<=k;i++) msg+=" "+msg;
+        
+          document.forms[0].imascroller.value=msg.substring(position,position+300);
+          if (position ++== 300) position = 0;
+          id = setTimeout( "imascroller()", 200 ); 
+        }
+
+        </script>
+
+        
+		
+        <script type="text/javascript">
+		
+			var numer = Math.floor(Math.random()*5)+1;
+			
+			var timer1 = 0;
+			var timer2 = 0;
+			
+			function ustawslajd(nrslajdu)
+			{
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+				numer = nrslajdu - 1;
+				
+				schowajslajd();
+				setTimeout("zmienslajd()", 500);
+				
+			}
+			
+			function schowajslajd()
+			{
+				$("#slider").fadeOut(500);
+			}
+		
+			function zmienslajd()
+			{
+				numer++; if (numer>8) numer=1;
+				
+				var plik = "<a href=https://pl.wikipedia.org/wiki/FC_Barcelona target=_blank><img id=slider src=\"zdjecia/slajd" + numer + ".jpg\" /></a>";
+				
+				document.getElementById("slider").innerHTML = plik;
+				$("#slider").fadeIn(500);
+				
+				timer1 = setTimeout("zmienslajd()", 5000);
+				timer2 = setTimeout("schowaj()", 4500);
+			
+			}
+			
+		</script>
+       
+</head>
+
+
+
+<body onload="imascroller(); zmienslajd(); odliczanie();" >
+
+<div id="header">
+    <div id="logo">
+        <a href="index.html">
+            <img class="image" src="zdjecia/logo.PNG" >
+        </a>
+    </div>
+    <div id="social"> 
+        
+        <div id="social_container">
+
+            <a href="https://www.facebook.com/fcbarcelona" target="_blank"><img class="icon" src="zdjecia/facebook.PNG"></a>
+            <a href="https://twitter.com/fcbarcelona_cat" target="_blank"><img class="icon" src="zdjecia/twitter.PNG"></a>
+            <a href="https://www.instagram.com/fcbarcelona/" target="_blank"><img class="icon" src="zdjecia/instagram.PNG"></a>
+            <a href="https://chats.viber.com/fcbarcelona/ca" target="_blank"><img class="icon" src="zdjecia/whatsapp.PNG"></a>
+        </div>
+        <div id="zegar"></div>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <a href="historia.html" ><li> Historia klubu</li></a> 
+            <a href="sklad.html" ><li> Skład </li></a>
+            <a href="tabela.html" ><li> Tabela wyników </li></a>
+            <a href="stroje.html" ><li> Stroje </li></a>
+            <a href="kontakt.html" ><li>Kontakt</li></a> 
+            <div style="clear:both"></div> 
+        </ul>
+    </div> 
+</div>
+
+<div id="grad">
+
+</div>
+
+<div id="content">
+    <div id="container">
+        <p id="p_index">
+            Witaj na stronie poświęconej FC Barcelonie!! 
+        </p>
+
+        
+        <div id="slider"></div>
+       
+        <script type="text/javascript">
+            var wygrane=22;
+            var remisy =8;
+            var porazki=2;
+            var suma_punktow = wygrane*3+remisy;
+            document.write("<h4>Liczba wygranych meczów w sezonie:  " + wygrane +"</h4>");
+            document.write("<h4>Liczba zremisowanych meczy w sezonie:  " + remisy +"</h4>")
+            document.write("<h4>Liczba przegranych meczów w sezonie:  " + porazki +"</h4>")
+            document.write("<h4>Liczba punktów uzyskanych w sezonie:  " + suma_punktow +"</h4>")
+        </script>
+        
+
+        <div id ="Timetomatch">
+            <form ID="form2" action=get>
+            <input id="domeczu" type="text" name="imascroller" size="200" value="">
+            </form>
+        </div>
+    </div> 
+</div>
+
+<div id="footer">
+Bądź na bierząco z FC Barceloną. Strona w sieci od 2019r. &copy; Wszelkie prawa zastrzeżone.
+</div>
+
+</body>
+</html>

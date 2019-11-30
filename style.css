@@ -1,0 +1,310 @@
+body {
+    margin: 0px;
+    background-color: #141329;
+    color:black;
+    font-family: 'Sintony', sans-serif;
+    font-size: 18px;
+}
+html, body {
+    overflow-y: none;
+}
+
+#header
+{
+    width: 100%;
+    height: 100px;
+    background-color: red; 
+}
+
+#logo
+{
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: blueviolet;
+}
+.image
+{
+    width: 100%;
+    height: 100%;
+}
+
+#social
+{   
+    float: left;
+    width: 70%;
+    height: 30%;
+    background-color: #141329;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+#social_container
+{
+    height: 60%;
+    width: 100%;
+}
+
+#zegar
+{   
+    margin-left:10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 100%;
+    width: auto;
+    color: white;
+}
+
+.icon
+{
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    opacity: 0.6;
+    transition: .3s all;
+}
+
+.icon:hover 
+{
+    opacity: 1;
+}
+
+#menu
+{
+    float: left;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    
+}
+ul
+{ clear: both;
+    width: 100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+ul a 
+{
+    width: 20%; 
+}
+ul a:first-child li 
+{
+    border-left: none;
+}
+li
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    width: 20%;
+    text-decoration: none;
+    color: white;
+    background-color: #181733;
+    height: 100%;
+    margin:0;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    border-left:  1px solid #29283d;
+}
+
+ul a li {
+    transition: .5s all;  
+}
+ul a:hover li{
+    background: red;
+}
+
+#grad
+{
+    width: 100%;
+    height: 6px;
+    background-image: linear-gradient(to right,yellow, red,indigo);
+}
+
+#content
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #141329;   
+    min-height: 600px 
+}
+
+#container
+{
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    /* background-image: url('zdjecia\\leo.jpg'); */
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 600px;
+    border-radius: 20px;
+    text-align: center;
+
+
+}
+
+
+
+#sliderImage {
+    background-color: white;
+    height: 500px;
+    width: 990px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider {
+    width: 800px;
+    height: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#p_index
+{
+    text-align: center;
+}
+
+h1,h2,h3,b,p
+{
+    margin:30px;
+    text-align: justify;
+    
+}
+h1,h2,h4
+{
+    text-align: center;
+    padding-top: 20px;
+}
+#form1
+{
+    margin: 30px;
+    text-align: center;  
+}
+
+
+#Timetomatch
+{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+intup:focus{
+    outline: none;
+    border: none;
+}
+#domeczu
+{
+    width: 80%;
+    font-weight: bold;
+    /* background: white; */
+    color: white;
+     background-image: linear-gradient(90deg,#8d1a17,#181733); 
+    height: 40px;
+    font-size: 18px;
+    border-radius: 15px;
+    
+}
+
+input[type=text]
+{
+    width: 25%;
+    font-size: 18px;
+}
+input[type=email]
+{
+    width:25%;
+    font-size: 18px;
+}
+textarea 
+{
+    max-width:90%;
+}
+input[type=submit]
+{
+    font-size: 16px;
+    padding: 5px;
+    width: 20%;
+    margin-right: 30px;
+    background-color: #6d1e1e;
+    color: orange;
+}
+input[type=reset]
+{
+    font-size: 16px;
+    padding: 5px;
+    width: 20%;
+    margin-left: 30px;
+    background-color: #6d1e1e;
+    color: orange;
+}
+
+table
+{   
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+
+#footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: yellow;
+    clear: both;
+    width: 90%;
+    height: 40px;   
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right,#141329,#8d1a17,#141329);
+}
+
+
+@media only screen and (max-width: 768px) 
+{
+    
+    #header
+    {
+        font-size: 15px
+    }
+    #logo {
+        display: none;
+    }
+
+    #social {
+        width: 100%;
+    }
+
+    #menu {
+        width: 100%;
+    }
+    #footer
+    {
+        font-size: 14px;
+    }
+    .rwd-table {
+    overflow-x:scroll;
+    }
+}
